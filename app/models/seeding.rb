@@ -1,0 +1,2 @@
+class Seeding < ApplicationRecord
+end
