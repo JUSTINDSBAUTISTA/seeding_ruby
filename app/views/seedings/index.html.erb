@@ -1,0 +1,26 @@
+<h1 style="text-align: center">Seeding Data count: <%= @seedings.count %></h1>
+
+<div class="container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Id Tag</th>
+        <th scope="col">Tag</th>
+        <th scope="col">Id Type</th>
+        <th scope="col">Tag Type</th>
+        <th scope="col">Articles</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @seedings.each do |seeding| %>
+        <tr>
+          <td style="font-weight: bold"><%= seeding.idTag %></td>
+          <td><%= seeding.tag %></td>
+          <td><%= seeding.idType %></td>
+          <td><%= seeding.tagType %></td>
+          <td><%= seeding.articles %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
