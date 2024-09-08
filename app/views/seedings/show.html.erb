@@ -1,0 +1,18 @@
+<div class="container mt-5">
+<%= link_to "Back", seedings_path %>
+  <div class="row">
+    <div class="col-8 card" style="background-image: url('<%= asset_path 'default.jpg' %>')">
+    <h1 style="text-align: center; color: white">
+      <%= @seeding.tag %>
+    </h1>
+    </div>
+    <div class="col-4">
+    <h4>
+      Id: <%= @seeding.idTag %>
+    </h4>
+    <h1>Id Type: <%= @seeding.idType %></h1>
+    <p>Tag type: <%= @seeding.tagType %></p>
+    <p>Articles # <%= @seeding.articles %></p>
+    </div>
+  </div>
+</div>

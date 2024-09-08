@@ -1,4 +1,4 @@
-<h1 style="text-align: center">Seeding Data count: <%= @seedings.count %></h1>
+<h1 style="text-align: center">Seeding Trends</h1>
 
 <div class="container">
   <table class="table">
@@ -12,14 +12,26 @@
       </tr>
     </thead>
     <tbody>
-      <% @seedings.each do |seeding| %>
+      <% if @seedings.empty? %>
+        <p style="color: red">Go to terminal and run db:seed</p>
         <tr>
-          <td style="font-weight: bold"><%= seeding.idTag %></td>
-          <td><%= seeding.tag %></td>
-          <td><%= seeding.idType %></td>
-          <td><%= seeding.tagType %></td>
-          <td><%= seeding.articles %></td>
+          <td>N/A</td>
+          <td>N/A</td>
+          <td>N/A</td>
+          <td>N/A</td>
+          <td>N/A</td>
         </tr>
+      <% else %>
+        <p style="color: green">Seeding successfully!</p>
+        <% @seedings.take(20).each do |seeding| %>
+          <tr>
+            <td style="font-weight: bold"><%= seeding.idTag %></td>
+            <td><%= seeding.tag %></td>
+            <td><%= seeding.idType %></td>
+            <td><%= seeding.tagType %></td>
+            <td><%= seeding.articles %> <%= link_to "view", seeding_path(seeding) %></td>
+          </tr>
+        <% end %>
       <% end %>
     </tbody>
   </table>
